@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class NewMovement : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class NewMovement : MonoBehaviour
     private float theTimer;
 
     public GameObject qubus;
+    public GameObject tail;
 
+    public List<Transform> tailPositions;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,22 @@ public class NewMovement : MonoBehaviour
            
             transform.position += transform.up;
             theTimer = 0f;
+        }
+
+        Vector3 lastPos = transform.position;
+        tailPositions.Last().position = lastPos;
+
+    }
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        Vector2 spawnPos = new Vector2(5, 5); 
+        if (trigger.tag == "Senior")
+        {
+            GameObject newTail = Instantiate(tail, spawnPos, Quaternion.identity);
+            newTail.transform.parent = GameObject.Find("Tail Holder").transform;
+            tailPositions.Add(newTail.transform);
+            Debug.Log("Collided with Senior");
+
         }
     }
 }
