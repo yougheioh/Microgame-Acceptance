@@ -36,13 +36,20 @@ public class NewMovement : MonoBehaviour
         theTimer += Time.deltaTime;
         if(theTimer >= timerMax)
         {
-           
-            transform.position += transform.up;
+            //Moveit();
+            transform.Translate(transform.up * 1);
             theTimer = 0f;
         }
 
-        Vector3 lastPos = transform.position;
-        tailPositions.Last().position = lastPos;
+        void Moveit()
+        {
+            Vector3 lastPos = transform.position;
+
+
+            tailPositions.Last().position = lastPos;
+            return;
+        }
+
 
     }
     void OnTriggerEnter2D(Collider2D trigger)
