@@ -37,7 +37,7 @@ public class NewMovement : MonoBehaviour
         if(theTimer >= timerMax)
         {
             //Moveit();
-            transform.Translate(transform.up * 1);
+            transform.position += transform.up * 1;
             theTimer = 0f;
         }
 
