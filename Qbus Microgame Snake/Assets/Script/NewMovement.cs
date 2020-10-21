@@ -10,51 +10,60 @@ public class NewMovement : MonoBehaviour
 
     public GameObject qubus;
     public GameObject tail;
+    private Vector2 direction;
+    public float speed = 1f;
+    public float moveRate = 0.3f;
 
     public List<Transform> tailPositions;
 
     // Start is called before the first frame update
     void Start()
     {
-        theTimer = 0;
+        direction = Vector2.up;
+        InvokeRepeating("Move", moveRate, moveRate);
   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-
-        {
-            qubus.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            qubus.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
-        }
-        theTimer += Time.deltaTime;
-        if(theTimer >= timerMax)
-        {
-            //Moveit();
-            transform.position += transform.up * 1;
-            theTimer = 0f;
-        }
-
-        void Moveit()
-        {
-            Vector3 lastPos = transform.position;
-
-
-            tailPositions.Last().position = lastPos;
-            return;
-        }
+        ChangeDirection();
 
 
     }
+
+    void Move()
+        {
+            Vector3 lastPos = transform.position;
+            transform.Translate(direction * speed);
+
+            if (tailPositions.Count >= 1)
+            {
+                tailPositions.Last().position = lastPos;
+                tailPositions.Insert(0, tailPositions.Last());
+                tailPositions.RemoveAt(tailPositions.Count - 1);
+                return;
+            }
+
+        }
+    
+    void ChangeDirection()
+    {
+            if (Input.GetMouseButtonDown(0))
+
+            {
+                qubus.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                qubus.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
+            }
+           
+        }
     void OnTriggerEnter2D(Collider2D trigger)
     {
-        Vector2 spawnPos = new Vector2(5, 5); 
+        Vector2 spawnPos = new Vector2(10,10); 
         if (trigger.tag == "Senior")
         {
             GameObject newTail = Instantiate(tail, spawnPos, Quaternion.identity);

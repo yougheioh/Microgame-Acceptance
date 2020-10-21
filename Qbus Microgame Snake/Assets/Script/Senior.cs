@@ -26,9 +26,9 @@ public class Senior : MonoBehaviour
 
     void SpawnSenior()
         {
-      
-        int xPos = Random.Range(-13, 13);
-        int yPos = Random.Range(-9, 9);
+        Debug.Log("Spawned a Senior :3");
+        int xPos = Random.Range(-7, 7);
+        int yPos = Random.Range(-4, 4);
         GameObject a = Instantiate(senior) as GameObject;
         a.transform.position = new Vector2(xPos, yPos);
 
