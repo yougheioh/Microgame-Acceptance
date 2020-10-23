@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class NewMovement : MonoBehaviour
 {
@@ -100,5 +101,10 @@ public class NewMovement : MonoBehaviour
             Debug.Log("Collided with Senior");
 
         }
+        if (trigger.tag == "Furniture")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
+    
 }
