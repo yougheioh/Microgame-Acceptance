@@ -5,8 +5,7 @@ using System.Linq;
 
 public class NewMovement : MonoBehaviour
 {
-    public float timerMax = 1f;
-    private float theTimer;
+   
 
     public GameObject qubus;
     public GameObject tail;
@@ -15,12 +14,16 @@ public class NewMovement : MonoBehaviour
     public float moveRate = 0.3f;
 
     public List<Transform> tailPositions;
+    public List<Transform> tailRotate;
+    public int seniorCount;
 
     // Start is called before the first frame update
     void Start()
     {
         direction = Vector2.up;
         InvokeRepeating("Move", moveRate, moveRate);
+
+        seniorCount = 0;
   
     }
 
@@ -28,14 +31,15 @@ public class NewMovement : MonoBehaviour
     void Update()
     {
         ChangeDirection();
-
-
+        
     }
 
     void Move()
         {
             Vector3 lastPos = transform.position;
-            transform.Translate(direction * speed);
+        
+        transform.Translate(direction * speed);
+        
 
             if (tailPositions.Count >= 1)
             {
@@ -66,6 +70,7 @@ public class NewMovement : MonoBehaviour
         Vector2 spawnPos = new Vector2(10,10); 
         if (trigger.tag == "Senior")
         {
+            seniorCount += 1;
             GameObject newTail = Instantiate(tail, spawnPos, Quaternion.identity);
             newTail.transform.parent = GameObject.Find("Tail Holder").transform;
             tailPositions.Add(newTail.transform);
