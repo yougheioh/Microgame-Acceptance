@@ -8,7 +8,8 @@ public class NewMovement : MonoBehaviour
    
 
     public GameObject qubus;
-    public GameObject tail;
+    public GameObject tail1;
+    public GameObject tail2;
     private Vector2 direction;
     public float speed = 1f;
     public float moveRate = 0.3f;
@@ -37,6 +38,7 @@ public class NewMovement : MonoBehaviour
     void Move()
         {
             Vector3 lastPos = transform.position;
+        Quaternion lastRot = transform.rotation;
         
         transform.Translate(direction * speed);
         
@@ -44,12 +46,22 @@ public class NewMovement : MonoBehaviour
             if (tailPositions.Count >= 1)
             {
                 tailPositions.Last().position = lastPos;
+            
                 tailPositions.Insert(0, tailPositions.Last());
+            
                 tailPositions.RemoveAt(tailPositions.Count - 1);
-                return;
+            
+               
             }
-
+            if(tailRotate.Count >= 1)
+        {
+            tailRotate.Last().rotation = lastRot;
+            tailRotate.Insert(0, tailRotate.Last());
+            tailRotate.RemoveAt(tailPositions.Count - 1);
+            
         }
+        return;
+    }
     
     void ChangeDirection()
     {
@@ -68,12 +80,23 @@ public class NewMovement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D trigger)
     {
         Vector2 spawnPos = new Vector2(10,10); 
-        if (trigger.tag == "Senior")
+        if (trigger.tag == "Senior1")
         {
             seniorCount += 1;
-            GameObject newTail = Instantiate(tail, spawnPos, Quaternion.identity);
+            GameObject newTail = Instantiate(tail1, spawnPos, Quaternion.identity);
             newTail.transform.parent = GameObject.Find("Tail Holder").transform;
             tailPositions.Add(newTail.transform);
+            tailRotate.Add(newTail.transform);
+            Debug.Log("Collided with Senior");
+
+        }
+        if (trigger.tag == "Senior2")
+        {
+            seniorCount += 1;
+            GameObject newTail = Instantiate(tail2, spawnPos, Quaternion.identity);
+            newTail.transform.parent = GameObject.Find("Tail Holder").transform;
+            tailPositions.Add(newTail.transform);
+            tailRotate.Add(newTail.transform);
             Debug.Log("Collided with Senior");
 
         }

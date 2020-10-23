@@ -8,6 +8,8 @@ TagManager:
   - Food
   - Circle
   - Senior
+  - Senior1
+  - Senior2
   layers:
   - Default
   - TransparentFX
