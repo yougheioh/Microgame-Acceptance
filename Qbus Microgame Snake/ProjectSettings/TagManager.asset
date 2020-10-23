@@ -7,9 +7,9 @@ TagManager:
   - Snake
   - Food
   - Circle
-  - Senior
   - Senior1
   - Senior2
+  - Furniture
   layers:
   - Default
   - TransparentFX
