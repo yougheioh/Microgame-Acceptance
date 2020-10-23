@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qubus: {fileID: 7787600511549016736}
-  tail: {fileID: 4471135793101585479, guid: 9b7d3f6dac47f904b9eecc0e08ae46b1, type: 3}
+  tail1: {fileID: 4471135793101585479, guid: 9b7d3f6dac47f904b9eecc0e08ae46b1, type: 3}
+  tail2: {fileID: 4471135793101585479, guid: 9409c847b24357a448ada253539b0fa0, type: 3}
   speed: 1
   moveRate: 0.3
   tailPositions: []
