@@ -33,7 +33,11 @@ public class NewMovement : MonoBehaviour
     void Update()
     {
         ChangeDirection();
-        
+        if (seniorCount >= 5)
+        {
+            SceneManager.LoadScene(3);
+        }
+
     }
 
     void Move()
@@ -106,5 +110,7 @@ public class NewMovement : MonoBehaviour
             SceneManager.LoadScene(2);
         }
     }
+    
+
     
 }
