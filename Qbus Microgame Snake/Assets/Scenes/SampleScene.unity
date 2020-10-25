@@ -295,7 +295,7 @@ PrefabInstance:
     - target: {fileID: 4623542896958000121, guid: 621b053eb03a95c41ad750c66d406ff5,
         type: 3}
       propertyPath: m_Name
-      value: Senior2
+      value: Senior1
       objectReference: {fileID: 0}
     - target: {fileID: 4623542896958000125, guid: 621b053eb03a95c41ad750c66d406ff5,
         type: 3}
@@ -582,7 +582,7 @@ PrefabInstance:
     - target: {fileID: 4623542896958000121, guid: 719f46cfb191ffe4582424b1a2e3d210,
         type: 3}
       propertyPath: m_Name
-      value: Senior
+      value: Senior2
       objectReference: {fileID: 0}
     - target: {fileID: 4623542896958000125, guid: 719f46cfb191ffe4582424b1a2e3d210,
         type: 3}
