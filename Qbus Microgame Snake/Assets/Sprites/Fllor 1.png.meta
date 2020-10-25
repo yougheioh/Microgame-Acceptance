@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: cb676c182b64da047ad2e6e4cc9861f7
+guid: d1220d0580b5896418c7f6e9fba700b2
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7153074769744272022
-    second: Qubus side and cane_0
-  - first:
-      213: 4271118319537868914
-    second: Qubus side and cane_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,13 +34,13 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -91,49 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Qubus side and cane_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 34
-        width: 27
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69a9a6eba93d44360800000000000000
-      internalID: 7153074769744272022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Qubus side and cane_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 23
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 270d7b57b7f064b30800000000000000
-      internalID: 4271118319537868914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
