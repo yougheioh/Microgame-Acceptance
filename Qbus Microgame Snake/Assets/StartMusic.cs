@@ -35,7 +35,7 @@ public class StartMusic : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Startmusic.Play();
+        //Startmusic.Play();
         startTimer = true;
         
     }
